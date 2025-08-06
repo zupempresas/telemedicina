@@ -39,7 +39,7 @@
                         </svg>
                     </div-->
 					
-					<div class="w-16 h-16 rounded-lg overflow-hidden">
+					<div class="w-16 h-13 rounded-lg overflow-hidden">
 						<img src="nova_logo_zupmed.png" alt="Tecnologia que cuida!" class="w-full h-full object-cover">
 					</div>
 
@@ -222,7 +222,7 @@
             </div>
 
             <!-- Security Forms -->
-            <div id="security" class="form-section active">
+            <div id="security2" class="form-section active">
                 <h4 class="text-2xl md:text-3xl font-bold text-center mb-8 text-medical-red">🔐 Segurança e Conformidade</h4>
                 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -1217,7 +1217,7 @@
             <div class="space-y-6">
                 <!-- Security & Compliance -->
                 <div class="schema-container rounded-xl p-6">
-                    <button class="accordion-button w-full flex justify-between items-center text-left" onclick="toggleAccordion('security')">
+                    <button class="accordion-button w-full flex justify-between items-center text-left" onclick="toggleAccordion22('security2')">
                         <div class="flex items-center space-x-4">
                             <div class="w-12 h-12 bg-medical-red rounded-lg flex items-center justify-center">
                                 <span class="text-white text-xl">🔐</span>
@@ -1232,7 +1232,7 @@
                         </svg>
                     </button>
                     
-                    <div class="accordion-content mt-6" id="security">
+                    <div class="accordion-content mt-6" id="security2">
                         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                             <!-- User Authentication Table -->
                             <div class="bg-white rounded-lg p-4 border-2 border-gray-200">
@@ -2406,6 +2406,7 @@
 			
 			
 			<div class="container mx-auto px-6">
+			<div class="espaco"></div>
             <div class="text-center mb-16">
                 <h3 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">🚀 Funcionalidades Avançadas</h3>
                 <p class="text-lg md:text-xl text-gray-600">Sistema completo com todas as ferramentas necessárias</p>
@@ -2736,7 +2737,11 @@
             </div>
         </div>
     </section>
-
+	<div>
+	
+	
+	
+	<div>
 
     <!-- CTA Section -->
     <section class="gradient-bg text-white py-20">
@@ -2764,14 +2769,19 @@
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
                     <div class="flex items-center space-x-3 mb-6">
-                        <div class="w-12 h-12 bg-medical-blue rounded-lg flex items-center justify-center">
+                        <!--div class="w-12 h-12 bg-medical-blue rounded-lg flex items-center justify-center">
                             <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M19 8l-4 4h3c0 3.31-2.69 6-6 6-1.01 0-1.97-.25-2.8-.7l-1.46 1.46C8.97 19.54 10.43 20 12 20c4.42 0 8-3.58 8-8h3l-4-4zM6 12c0-3.31 2.69-6 6-6 1.01 0 1.97.25 2.8.7l1.46-1.46C15.03 4.46 13.57 4 12 4c-4.42 0-8 3.58-8 8H1l4 4 4-4H6z"/>
                             </svg>
-                        </div>
+							
+                        </div-->
+						
+						<div class="w-16 h-13 rounded-lg overflow-hidden">
+								<img src="nova_logo_zupmed.png" alt="Tecnologia que cuida!" class="w-full h-full object-cover">
+							</div>
                         <div>
                             <h4 class="text-2xl font-bold">ZupMed</h4>
-                            <p class="text-gray-400">Tecnologia que cuida</p>
+                            <p class="text-gray-400">Tecnologia que cuida!</p>
                         </div>
                     </div>
                     <p class="text-gray-400">Plataforma completa de telemedicina com segurança LGPD e funcionalidades avançadas.</p>
@@ -2803,7 +2813,7 @@
                         <li>📧 zupempresas@gmail.com</li>
                         <li>📱 (61) 99679-7075</li>
                         <li>💬 Atendimento online 24/7</li>
-                        <li>🏢 Brasília Paulo, DF - Brasil</li>
+                        <li>🏢 Brasília, DF - Brasil</li>
                     </ul>
                 </div>
             </div>
@@ -3097,6 +3107,25 @@
             content.classList.toggle('active');
             button.classList.toggle('active');
         }
+		
+		// Accordion functionality
+        function toggleAccordion22(sectionId) {
+		alert(sectionId);
+            const content = document.getElementById(sectionId);
+            const button = content.previousElementSibling;
+            
+            // Close all other accordions
+            document.querySelectorAll('.accordion-content').forEach(acc => {
+                if (acc.id !== sectionId) {
+                    acc.classList.remove('active');
+                    acc.previousElementSibling.classList.remove('active');
+                }
+            });
+            
+            // Toggle current accordion
+            content.classList.toggle('active');
+            button.classList.toggle('active');
+        }
 
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -3187,6 +3216,7 @@
 
         // Initialize first accordion as open
         document.addEventListener('DOMContentLoaded', function() {
+		alert("Initialize first accordion as open");
             toggleAccordion('security');
         });
     </script>
