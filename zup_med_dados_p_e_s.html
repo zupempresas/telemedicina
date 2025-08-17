@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZupMed - Classificação de Dados do SUS</title>
+	<link rel="icon" href="nova_logo_zupmed.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'sus-blue': '#1e40af',
+                        'sus-green': '#16a34a',
+                        'sus-red': '#dc2626',
+                        'sus-orange': '#ea580c'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-lg border-b-4 border-sus-blue">
+        <div class="container mx-auto px-6 py-8">
+            <!--div class="flex items-center mb-4">
+                <div class="flex items-center bg-sus-blue text-white px-4 py-2 rounded-lg mr-4">
+                    <svg class="w-8 h-8 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
+                        <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 1V5M12 19V23M4.22 4.22L7.05 7.05M16.95 16.95L19.78 19.78M1 12H5M19 12H23M4.22 19.78L7.05 16.95M16.95 7.05L19.78 4.22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    <span class="text-2xl font-bold">ZupMed</span>
+                </div>
+                <div>
+                    <h1 class="text-4xl font-bold text-sus-blue">Classificação de Dados do SUS</h1>
+                </div>
+            </div-->
+			<div class="flex items-center space-x-3">
+                    <!--div class="w-12 h-12 bg-medical-blue rounded-lg flex items-center justify-center">
+                        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 8l-4 4h3c0 3.31-2.69 6-6 6-1.01 0-1.97-.25-2.8-.7l-1.46 1.46C8.97 19.54 10.43 20 12 20c4.42 0 8-3.58 8-8h3l-4-4zM6 12c0-3.31 2.69-6 6-6 1.01 0 1.97.25 2.8.7l1.46-1.46C15.03 4.46 13.57 4 12 4c-4.42 0-8 3.58-8 8H1l4 4 4-4H6z"/>
+                        </svg>
+                    </div-->
+					
+					<div class="w-16 h-13 rounded-lg overflow-hidden">
+						<img src="nova_logo_zupmed.png" alt="Tecnologia que cuida!" class="w-full h-full object-cover">
+					</div>
+
+                    <div>
+                        <h1 class="text-2xl font-bold text-medical-blue">ZupMed</h1>
+                        <p class="text-sm text-gray-400">Tecnologia que cuida!</p>
+                    </div>
+                </div>
+			
+            <p class="text-gray-600 text-lg">Guia completo sobre dados públicos e sensíveis nas APIs do Sistema Único de Saúde</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+        <!-- Public Data Section -->
+        <section class="mb-16">
+            <div class="bg-white rounded-2xl shadow-xl p-8 border-l-8 border-sus-green">
+                <div class="flex items-center mb-6">
+                    <div class="w-8 h-8 bg-sus-green rounded-full flex items-center justify-center mr-4">
+                        <span class="text-white font-bold">✓</span>
+                    </div>
+                    <h2 class="text-3xl font-bold text-sus-green">1. Dados Públicos</h2>
+                </div>
+                
+                <p class="text-gray-700 mb-6 text-lg leading-relaxed">
+                    Estes dados podem ser acessados sem identificação pessoal do cidadão. São geralmente utilizados para interoperabilidade, registros gerais ou informações institucionais.
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-green-50 p-6 rounded-xl">
+                        <h3 class="text-xl font-semibold text-sus-green mb-4">Dados de Unidades de Saúde (CNES)</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-center"><span class="w-2 h-2 bg-sus-green rounded-full mr-3"></span>Nome da unidade</li>
+                            <li class="flex items-center"><span class="w-2 h-2 bg-sus-green rounded-full mr-3"></span>Tipo de serviço</li>
+                            <li class="flex items-center"><span class="w-2 h-2 bg-sus-green rounded-full mr-3"></span>Endereço</li>
+                            <li class="flex items-center"><span class="w-2 h-2 bg-sus-green rounded-full mr-3"></span>CNPJ</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-green-50 p-6 rounded-xl">
+                        <h3 class="text-xl font-semibold text-sus-green mb-4">Catálogos Disponíveis</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-center"><span class="w-2 h-2 bg-sus-green rounded-full mr-3"></span>Tabela de procedimentos (SIGTAP)</li>
+                            <li class="flex items-center"><span class="w-2 h-2 bg-sus-green rounded-full mr-3"></span>Profissionais credenciados</li>
+                            <li class="flex items-center"><span class="w-2 h-2 bg-sus-green rounded-full mr-3"></span>Medicamentos registrados</li>
+                            <li class="flex items-center"><span class="w-2 h-2 bg-sus-green rounded-full mr-3"></span>Especialidades médicas</li>
+                            <li class="flex items-center"><span class="w-2 h-2 bg-sus-green rounded-full mr-3"></span>Exames disponíveis</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-6 p-4 bg-yellow-50 border-l-4 border-yellow-400 rounded-r-lg">
+                    <p class="text-yellow-800 font-medium">
+                        ⚠️ Mesmo com acesso público, esses dados devem ser utilizados conforme os termos de uso e com cuidado para não cruzar com dados sensíveis.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sensitive Data Section -->
+        <section class="mb-16">
+            <div class="bg-white rounded-2xl shadow-xl p-8 border-l-8 border-sus-red">
+                <div class="flex items-center mb-6">
+                    <div class="w-8 h-8 bg-sus-red rounded-full flex items-center justify-center mr-4">
+                        <span class="text-white font-bold">!</span>
+                    </div>
+                    <h2 class="text-3xl font-bold text-sus-red">2. Dados Sensíveis (Protegidos pela LGPD)</h2>
+                </div>
+                
+                <p class="text-gray-700 mb-6 text-lg leading-relaxed">
+                    Qualquer dado que identifique direta ou indiretamente uma pessoa e se refira à sua saúde é considerado sensível. O uso requer base legal, consentimento e mecanismos de segurança.
+                </p>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-red-50 p-4 rounded-xl">
+                        <h4 class="font-semibold text-sus-red mb-3">Dados Pessoais</h4>
+                        <ul class="space-y-1 text-sm text-gray-700">
+                            <li>• Nome completo do paciente</li>
+                            <li>• CPF ou CNS</li>
+                            <li>• Número do prontuário</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-red-50 p-4 rounded-xl">
+                        <h4 class="font-semibold text-sus-red mb-3">Dados Clínicos</h4>
+                        <ul class="space-y-1 text-sm text-gray-700">
+                            <li>• Diagnósticos</li>
+                            <li>• Histórico de consultas</li>
+                            <li>• Exames laboratoriais</li>
+                            <li>• Medicações prescritas</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-red-50 p-4 rounded-xl">
+                        <h4 class="font-semibold text-sus-red mb-3">Dados Biométricos</h4>
+                        <ul class="space-y-1 text-sm text-gray-700">
+                            <li>• Impressão digital</li>
+                            <li>• Dados de retina</li>
+                            <li>• Localização em tempo real</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- APIs Table Section -->
+        <section class="mb-16">
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <h2 class="text-3xl font-bold text-sus-blue mb-6 flex items-center">
+                    <span class="mr-4">🧩</span>
+                    Fontes Comuns de APIs do SUS
+                </h2>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full border-collapse">
+                        <thead>
+                            <tr class="bg-sus-blue text-white">
+                                <th class="border border-blue-300 px-4 py-3 text-left font-semibold">Sistema</th>
+                                <th class="border border-blue-300 px-4 py-3 text-left font-semibold">Finalidade</th>
+                                <th class="border border-blue-300 px-4 py-3 text-left font-semibold">Dados Disponíveis</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="border border-gray-200 px-4 py-3 font-medium">CNES</td>
+                                <td class="border border-gray-200 px-4 py-3">Cadastro Nacional de Estabelecimentos de Saúde</td>
+                                <td class="border border-gray-200 px-4 py-3">
+                                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm">Dados públicos de unidades</span>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="border border-gray-200 px-4 py-3 font-medium">SCPA/SCPA-i</td>
+                                <td class="border border-gray-200 px-4 py-3">Sistema de Cadastro de Profissionais de Saúde</td>
+                                <td class="border border-gray-200 px-4 py-3">
+                                    <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-sm">Dados limitados</span>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="border border-gray-200 px-4 py-3 font-medium">Sigtap</td>
+                                <td class="border border-gray-200 px-4 py-3">Procedimentos do SUS</td>
+                                <td class="border border-gray-200 px-4 py-3">
+                                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm">Tabela de procedimentos (público)</span>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="border border-gray-200 px-4 py-3 font-medium">e-SUS AB</td>
+                                <td class="border border-gray-200 px-4 py-3">Atenção Básica (prontuário eletrônico)</td>
+                                <td class="border border-gray-200 px-4 py-3">
+                                    <span class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-sm">Dados sensíveis de pacientes</span>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 transition-colors">
+                                <td class="border border-gray-200 px-4 py-3 font-medium">RNDS</td>
+                                <td class="border border-gray-200 px-4 py-3">Rede Nacional de Dados em Saúde</td>
+                                <td class="border border-gray-200 px-4 py-3">
+                                    <span class="bg-red-100 text-red-800 px-2 py-1 rounded-full text-sm">Dados clínicos, exames, vacinas</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Legal Requirements Section -->
+        <section class="mb-16">
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <h2 class="text-3xl font-bold text-sus-blue mb-6 flex items-center">
+                    <span class="mr-4">🛡️</span>
+                    Cuidados Legais e Técnicos
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-blue-50 p-6 rounded-xl">
+                        <h3 class="text-xl font-semibold text-sus-blue mb-4 flex items-center">
+                            <span class="mr-2">✔️</span>
+                            Requisitos Legais
+                        </h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="w-2 h-2 bg-sus-blue rounded-full mr-3 mt-2"></span>
+                                <span>Consentimento informado do paciente</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="w-2 h-2 bg-sus-blue rounded-full mr-3 mt-2"></span>
+                                <span>Política de privacidade clara</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="w-2 h-2 bg-sus-blue rounded-full mr-3 mt-2"></span>
+                                <span>Registro das operações de acesso</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-indigo-50 p-6 rounded-xl">
+                        <h3 class="text-xl font-semibold text-indigo-700 mb-4 flex items-center">
+                            <span class="mr-2">✔️</span>
+                            Requisitos Técnicos
+                        </h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="w-2 h-2 bg-indigo-700 rounded-full mr-3 mt-2"></span>
+                                <span>Autenticação forte (OAuth, JWT)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="w-2 h-2 bg-indigo-700 rounded-full mr-3 mt-2"></span>
+                                <span>Criptografia de dados</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="w-2 h-2 bg-indigo-700 rounded-full mr-3 mt-2"></span>
+                                <span>Logs de acesso e rastreabilidade</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="w-2 h-2 bg-indigo-700 rounded-full mr-3 mt-2"></span>
+                                <span>Controle de acesso por perfil (RBAC)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Summary Section -->
+        <section class="mb-16">
+            <div class="bg-gradient-to-r from-sus-blue to-indigo-600 rounded-2xl shadow-xl p-8 text-white">
+                <h2 class="text-3xl font-bold mb-6 flex items-center">
+                    <span class="mr-4">💡</span>
+                    Resumo: Público vs. Sensível
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white bg-opacity-10 p-6 rounded-xl backdrop-blur-sm">
+                        <h3 class="text-xl font-semibold mb-4 text-green-200">Dados Públicos</h3>
+                        <p class="mb-3">Exemplo: Nome e endereço de uma UBS, tabela SIGTAP</p>
+                        <div class="flex items-center">
+                            <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium mr-2">✅</span>
+                            <span>Pode usar livremente</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-white bg-opacity-10 p-6 rounded-xl backdrop-blur-sm">
+                        <h3 class="text-xl font-semibold mb-4 text-red-200">Dados Sensíveis</h3>
+                        <p class="mb-3">Exemplo: Prontuário médico, resultados de exame, CPF</p>
+                        <div class="flex items-center">
+                            <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-medium mr-2">❌</span>
+                            <span>Exige base legal e segurança</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex items-center justify-center mb-4">
+                <div >
+                    <!--svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
+                        <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 1V5M12 19V23M4.22 4.22L7.05 7.05M16.95 16.95L19.78 19.78M1 12H5M19 12H23M4.22 19.78L7.05 16.95M16.95 7.05L19.78 4.22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg-->
+					<div class="w-16 h-13 rounded-lg overflow-hidden">
+						<img src="nova_logo_zupmed.png" alt="Tecnologia que cuida!" class="w-full h-full object-cover">
+					</div>
+                    <span class="font-bold">ZupMed</span>
+					 <span class="text-gray-300">   Soluções em Telemedicina</span>
+                </div>
+               
+            </div>
+            <p class="text-gray-300">
+                Este guia serve como referência para desenvolvedores e profissionais que trabalham com integração de dados do SUS.
+            </p>
+            <p class="text-gray-400 mt-2 text-sm">
+                Sempre consulte a legislação vigente e as diretrizes oficiais do Ministério da Saúde.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Add smooth scrolling for better UX
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add hover effects to cards
+        const cards = document.querySelectorAll('.bg-white');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'970cb23206956467',t:'MTc1NTQ3MDY2Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
