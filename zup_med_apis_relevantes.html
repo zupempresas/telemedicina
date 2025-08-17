@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APIs do SUS - Guia de Integração</title>
+	<link rel="icon" href="nova_logo_zupmed.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'sus-blue': '#1e40af',
+                        'sus-green': '#059669',
+                        'sus-light-blue': '#3b82f6',
+                        'sus-dark-blue': '#1e3a8a'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="bg-sus-blue text-white shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <!--div class="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+                        <span class="text-sus-blue font-bold text-lg">SUS</span>
+
+                    </div-->
+					<div class="w-16 h-13 rounded-lg overflow-hidden">
+						<img src="nova_logo_zupmed.png" alt="Tecnologia que cuida!" class="w-full h-full object-cover">
+					</div>
+                    <h1 class="text-2xl font-bold">ZupMed - APIs do SUS</h1>
+                </div>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="#apis" class="hover:text-blue-200 transition-colors">APIs</a>
+                    <a href="#comparativo" class="hover:text-blue-200 transition-colors">Comparativo</a>
+                    <a href="#integracao" class="hover:text-blue-200 transition-colors">Integração</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-sus-blue to-sus-light-blue text-white py-16">
+	
+        <div class="container mx-auto px-6 text-center">
+		
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                APIs do SUS Relevantes para Integração
+            </h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">
+                Guia completo sobre dados públicos e sensíveis para integração com sistemas de saúde
+            </p>
+            <button onclick="scrollToSection('apis')" class="bg-sus-green hover:bg-green-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors shadow-lg">
+                Explorar APIs
+            </button>
+        </div>
+    </section>
+
+    <!-- APIs Section -->
+    <section id="apis" class="py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-sus-dark-blue">Principais APIs Disponíveis</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- RNDS -->
+                <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-red-500 hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mr-4">
+                            <span class="text-red-600 font-bold text-lg">🏥</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">RNDS</h3>
+                            <span class="text-red-600 text-sm font-semibold bg-red-100 px-2 py-1 rounded">SENSÍVEL</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">Rede Nacional de Dados em Saúde - Plataforma oficial para integrar dados clínicos de pacientes</p>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                            <span>API RESTful FHIR v4 (JSON)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                            <span>Certificado ICP-Brasil obrigatório</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                            <span>Dados clínicos, exames, prescrições</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CNS -->
+                <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-orange-500 hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mr-4">
+                            <span class="text-orange-600 font-bold text-lg">🆔</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">CNS</h3>
+                            <span class="text-orange-600 text-sm font-semibold bg-orange-100 px-2 py-1 rounded">SENSÍVEL</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">Cartão Nacional de Saúde - Informações cadastrais do usuário do SUS</p>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                            <span>Protocolo SOAP (PIX-PDQ V3/XML)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                            <span>WS-Security</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                            <span>Dados cadastrais e identificadores</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CNES -->
+                <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-sus-green hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                            <span class="text-sus-green font-bold text-lg">🏢</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">CNES</h3>
+                            <span class="text-sus-green text-sm font-semibold bg-green-100 px-2 py-1 rounded">PÚBLICO</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">Cadastro Nacional de Estabelecimentos de Saúde - Dados públicos sobre unidades</p>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                            <span>Dados públicos</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                            <span>Nome, endereço, tipo de serviço</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                            <span>Sem informação pessoal</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SIGTAP -->
+                <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-sus-green hover:shadow-xl transition-shadow">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                            <span class="text-sus-green font-bold text-lg">📋</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">SIGTAP</h3>
+                            <span class="text-sus-green text-sm font-semibold bg-green-100 px-2 py-1 rounded">PÚBLICO</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">Tabela de Procedimentos, Medicamentos e OPM - Códigos e descrições</p>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                            <span>Dados públicos</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                            <span>Procedimentos e medicamentos</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                            <span>Informações técnicas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Outros Serviços -->
+                <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-purple-500 hover:shadow-xl transition-shadow md:col-span-2 lg:col-span-1">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+                            <span class="text-purple-600 font-bold text-lg">⚡</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">Outros</h3>
+                            <span class="text-purple-600 text-sm font-semibold bg-purple-100 px-2 py-1 rounded">VARIÁVEL</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">Portal DATASUS - REL, e-SUS APS, Vacinação, Notificação</p>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                            <span>Resultados de exames (REL)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                            <span>Sistema de Vacinação (SI-PNI)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                            <span>Registro de Atendimento (RAC)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparativo Section -->
+    <section id="comparativo" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-sus-dark-blue">Resumo Comparativo</h2>
+            
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead class="bg-sus-blue text-white">
+                            <tr>
+                                <th class="px-6 py-4 text-left font-semibold">API / Serviço</th>
+                                <th class="px-6 py-4 text-left font-semibold">Tipo de Dados</th>
+                                <th class="px-6 py-4 text-left font-semibold">Uso Recomendado para ZupMed</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 font-semibold text-gray-800">RNDS</td>
+                                <td class="px-6 py-4">
+                                    <span class="bg-red-100 text-red-800 px-2 py-1 rounded text-sm font-medium">Sensíveis (dados clínicos)</span>
+                                </td>
+                                <td class="px-6 py-4 text-gray-600">Integração profunda do histórico do paciente — teleconsultas, prontuário</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 font-semibold text-gray-800">CNS</td>
+                                <td class="px-6 py-4">
+                                    <span class="bg-orange-100 text-orange-800 px-2 py-1 rounded text-sm font-medium">Sensíveis (cadastro)</span>
+                                </td>
+                                <td class="px-6 py-4 text-gray-600">Verificação e identificação do paciente</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 font-semibold text-gray-800">CNES</td>
+                                <td class="px-6 py-4">
+                                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm font-medium">Públicos (estabelecimentos)</span>
+                                </td>
+                                <td class="px-6 py-4 text-gray-600">Localização de unidades credenciadas / apresentação institucional</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 font-semibold text-gray-800">SIGTAP</td>
+                                <td class="px-6 py-4">
+                                    <span class="bg-green-100 text-green-800 px-2 py-1 rounded text-sm font-medium">Públicos (procedimentos)</span>
+                                </td>
+                                <td class="px-6 py-4 text-gray-600">Referência de procedimentos e financeira</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 font-semibold text-gray-800">Outros (REL, SI-PNI, etc.)</td>
+                                <td class="px-6 py-4">
+                                    <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm font-medium">Sensíveis variáveis</span>
+                                </td>
+                                <td class="px-6 py-4 text-gray-600">Recursos suplementares como exames, vacinação, notificações</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integração Section -->
+    <section id="integracao" class="py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-sus-dark-blue">Como Proceder com a Integração</h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-8">
+                    <!-- Step 1 -->
+                    <div class="flex items-start space-x-6">
+                        <div class="flex-shrink-0 w-12 h-12 bg-sus-blue text-white rounded-full flex items-center justify-center font-bold text-lg">1</div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Solicite acesso via Portal DATASUS</h3>
+                            <div class="bg-blue-50 rounded-lg p-4">
+                                <ul class="space-y-2 text-gray-700">
+                                    <li class="flex items-center">
+                                        <span class="w-2 h-2 bg-sus-blue rounded-full mr-3"></span>
+                                        Autentique-se usando Gov.br
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="w-2 h-2 bg-sus-blue rounded-full mr-3"></span>
+                                        Preencha formulário com informações da instituição
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="w-2 h-2 bg-sus-blue rounded-full mr-3"></span>
+                                        Inclua dados dos desenvolvedores responsáveis
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="flex items-start space-x-6">
+                        <div class="flex-shrink-0 w-12 h-12 bg-sus-green text-white rounded-full flex items-center justify-center font-bold text-lg">2</div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Prepare certificado digital</h3>
+                            <div class="bg-green-50 rounded-lg p-4">
+                                <ul class="space-y-2 text-gray-700">
+                                    <li class="flex items-center">
+                                        <span class="w-2 h-2 bg-sus-green rounded-full mr-3"></span>
+                                        Certificado ICP-Brasil válido obrigatório
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="w-2 h-2 bg-sus-green rounded-full mr-3"></span>
+                                        Autenticação forte com dois caminhos SSL
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="flex items-start space-x-6">
+                        <div class="flex-shrink-0 w-12 h-12 bg-purple-600 text-white rounded-full flex items-center justify-center font-bold text-lg">3</div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Acesse documentação técnica</h3>
+                            <div class="bg-purple-50 rounded-lg p-4">
+                                <ul class="space-y-2 text-gray-700">
+                                    <li class="flex items-center">
+                                        <span class="w-2 h-2 bg-purple-600 rounded-full mr-3"></span>
+                                        Guias de integração disponíveis no portal
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="w-2 h-2 bg-purple-600 rounded-full mr-3"></span>
+                                        Exemplos práticos e especificações SOAP/FHIR
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="flex items-start space-x-6">
+                        <div class="flex-shrink-0 w-12 h-12 bg-orange-600 text-white rounded-full flex items-center justify-center font-bold text-lg">4</div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Teste em homologação</h3>
+                            <div class="bg-orange-50 rounded-lg p-4">
+                                <ul class="space-y-2 text-gray-700">
+                                    <li class="flex items-center">
+                                        <span class="w-2 h-2 bg-orange-600 rounded-full mr-3"></span>
+                                        Ambiente separado para testes
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="w-2 h-2 bg-orange-600 rounded-full mr-3"></span>
+                                        Testes rigorosos antes da produção
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="flex items-start space-x-6">
+                        <div class="flex-shrink-0 w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-lg">5</div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-gray-800 mb-3">Implemente segurança</h3>
+                            <div class="bg-red-50 rounded-lg p-4">
+                                <ul class="space-y-2 text-gray-700">
+                                    <li class="flex items-center">
+                                        <span class="w-2 h-2 bg-red-600 rounded-full mr-3"></span>
+                                        Criptografia de dados em trânsito e repouso
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="w-2 h-2 bg-red-600 rounded-full mr-3"></span>
+                                        Logs e controle de acesso (RBAC)
+                                    </li>
+                                    <li class="flex items-center">
+                                        <span class="w-2 h-2 bg-red-600 rounded-full mr-3"></span>
+                                        Consentimento e conformidade com LGPD
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-sus-dark-blue text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">APIs do SUS</h3>
+                    <p class="text-blue-200">Guia completo para integração com os sistemas de saúde do Brasil.</p>
+                </div>
+                <!--div>
+                    <h3 class="text-xl font-bold mb-4">Links Úteis</h3>
+                    <ul class="space-y-2 text-blue-200">
+                        <li><a href="#" class="hover:text-white transition-colors">Portal DATASUS</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Documentação RNDS</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Gov.br</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contato</h3>
+                    <p class="text-blue-200">Para dúvidas sobre integração, consulte a documentação oficial do DATASUS.</p>
+                </div-->
+            </div>
+            <div class="border-t border-blue-800 mt-8 pt-8 text-center text-blue-200">
+                <p>&copy; 2025 ZupMed - Todos os direitos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('shadow-xl');
+            } else {
+                header.classList.remove('shadow-xl');
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'970cc9dda50c9321',t:'MTc1NTQ3MTYzNi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
